@@ -1,0 +1,45 @@
+namespace DayThreePart2
+{
+    run:Num
+    {
+        data = DayThreeInput.data
+
+        stepPairs = list(
+            {dx=1, dy=1},
+            {dx=3, dy=1},
+            {dx=5, dy=1},
+            {dx=7, dy=1},
+            {dx=1, dy=2}
+        )
+
+        folder(valSoFar, nextPair)
+        {
+            nextCount = calculate(data, nextPair)
+            return = valSoFar.mul(nextCount)
+        }
+        return = stepPairs.fold(1, folder)
+    }
+
+    calculate(data:List, steps):Num
+    {
+        yMax = data.count.sub(1)
+        xMax = data.at(0).count.sub(1)
+
+        initialState = {x=0, y=0, count=0}
+
+        continueCondition(state):Bool
+        {
+            return = state.y.leq(yMax)
+        }
+
+        loopBody(state)
+        {
+            countDelta = data.at(state.y).at(state.x).if(1, 0)
+            countNew = state.count.add(countDelta)
+            xNew = state.x.add(steps.dx).mod(xMax.add(1))
+            yNew = state.y.add(steps.dy)
+            return = {x=xNew, y=yNew, count=countNew}
+        }
+        return = for(initialState, continueCondition, loopBody).count
+    }
+}

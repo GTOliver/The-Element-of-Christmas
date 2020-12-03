@@ -1,0 +1,23 @@
+namespace DayTwo
+{
+    run:Num
+    {
+        return = calculate(DayTwoInput.data)
+    }
+
+    calculate(data:List):Num
+    {
+        # data must be a list of anonymous blocks, obeying the form
+        # {lower=1, upper=3, key=97, password=list(97,98,99,100,101)}
+        #
+        # This function will count the number of variables where the key appears between [lower, upper] number of times
+
+        passwordIsValid(element):Bool
+        {
+            passwordCharEqualsKey(char):Bool = char.eq(element.key)
+            nMatches = element.password.countWhere(passwordCharEqualsKey)
+            return = nMatches.geq(element.lower).and(nMatches.leq(element.upper))
+        }
+        return = data.countWhere(passwordIsValid)
+    }
+}

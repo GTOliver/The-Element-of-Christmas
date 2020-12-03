@@ -1,0 +1,30 @@
+namespace DayThree
+{
+    run:Num
+    {
+        return = calculate(DayThreeInput.data)
+    }
+
+    calculate(data:List):Num
+    {
+        yMax = data.count.sub(1)
+        xMax = data.at(0).count.sub(1)
+
+        initialState = {x=0, y=0, count=0}
+
+        continueCondition(state):Bool
+        {
+            return = state.y.leq(yMax)
+        }
+
+        loopBody(state)
+        {
+            countDelta = data.at(state.y).at(state.x).if(1, 0)
+            countNew = state.count.add(countDelta)
+            xNew = state.x.add(3).mod(xMax.add(1))
+            yNew = state.y.add(1)
+            return = {x=xNew, y=yNew, count=countNew}
+        }
+        return = for(initialState, continueCondition, loopBody).count
+    }
+}

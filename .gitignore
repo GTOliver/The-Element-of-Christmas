@@ -1,0 +1,6 @@
+config.json
+InputGenerators/input_files
+*input.ele
+*.DS_Store
+make/*
+python_solutions/*

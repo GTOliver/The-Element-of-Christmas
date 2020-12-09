@@ -1,0 +1,25 @@
+#[[ A dictionary is a map of keys (Strings) to values (Any) #]]
+struct Dict(keys:List, values:List)
+{
+    empty:Dict = Dict(List(_(x:Num)=0, 0), List(_(x:Num)=0, 0))
+
+    get(this:Dict, key:String)
+    {
+        continueCondition(idx:Num):Bool
+        {
+            stillInList = idx.lt(this.keys.count)
+            matchFound = this.keys.at(idx).eq(key)
+            return = stillInList.and(not(matchFound))
+        }
+        
+        keyIndex = for(0, continueCondition, _(idx) = idx.add(1))
+        return = this.values.at(keyIndex)
+    }
+
+    add(this:Dict, key:String, value:Any)
+    {
+        newKeys = this.keys.concatenate(list(key))
+        newValues = this.values.concatenate(list(value))
+        return = Dict(newKeys, newValues)
+    }
+}

@@ -1,0 +1,113 @@
+struct Char(u:Num)
+{
+    space:Char = Char(32)               #     Space
+    exclamationMark:Char = Char(33)     # !   Exclamation mark
+    quotationMark:Char = Char(34)       # "   Quotation mark
+    numberSign:Char = Char(35)          # #   Number sign, Hashtag, Octothorpe, Sharp
+    dollarSign:Char = Char(36)          # $   Dollar sign
+    percentSign:Char = Char(37)         # %   Percent sign
+    ampersand:Char = Char(38)           # &   Ampersand
+    apostrophe:Char = Char(39)          # '   Apostrophe
+    leftParenthesis:Char = Char(40)     # (   Left parenthesis
+    rightParenthesis:Char = Char(41)    # )   Right parenthesis
+    asterisk:Char = Char(42)            # *   Asterisk
+    plusSign:Char = Char(43)            # +   Plus sign
+    comma:Char = Char(44)               # ,   Comma
+    hyphen:Char = Char(45)              # -   Hyphen-minus
+    fullStop:Char = Char(46)            # .   Full stop
+    slash:Char = Char(47)               # /   Slash (Solidus)
+    zero:Char = Char(48)                # 0   Digit Zero
+    one:Char = Char(49)                 # 1   Digit One
+    two:Char = Char(50)                 # 2   Digit Two
+    three:Char = Char(51)               # 3   Digit Three
+    four:Char = Char(52)                # 4   Digit Four
+    five:Char = Char(53)                # 5   Digit Five
+    six:Char = Char(54)                 # 6   Digit Six
+    seven:Char = Char(55)               # 7   Digit Seven
+    eight:Char = Char(56)               # 8   Digit Eight
+    nine:Char = Char(57)                # 9   Digit Nine
+    colon:Char = Char(58)               # :   Colon
+    semicolon:Char = Char(59)           # ;   Semicolon
+    lessThanSign:Char = Char(60)        # <   Less-than sign
+    equalSign:Char = Char(61)           # =   Equal sign
+    greaterThanSign:Char = Char(62)     # >   Greater-than sign
+    questionMark:Char = Char(63)        # ?   Question mark
+    atSign:Char = Char(64)              # @   At sign
+    A:Char = Char(65)                   # A   Latin Capital letter A
+    B:Char = Char(66)                   # B   Latin Capital letter B
+    C:Char = Char(67)                   # C   Latin Capital letter C
+    D:Char = Char(68)                   # D   Latin Capital letter D
+    E:Char = Char(69)                   # E   Latin Capital letter E
+    F:Char = Char(70)                   # F   Latin Capital letter F
+    G:Char = Char(71)                   # G   Latin Capital letter G
+    H:Char = Char(72)                   # H   Latin Capital letter H
+    I:Char = Char(73)                   # I   Latin Capital letter I
+    J:Char = Char(74)                   # J   Latin Capital letter J
+    K:Char = Char(75)                   # K   Latin Capital letter K
+    L:Char = Char(76)                   # L   Latin Capital letter L
+    M:Char = Char(77)                   # M   Latin Capital letter M
+    N:Char = Char(78)                   # N   Latin Capital letter N
+    O:Char = Char(79)                   # O   Latin Capital letter O
+    P:Char = Char(80)                   # P   Latin Capital letter P
+    Q:Char = Char(81)                   # Q   Latin Capital letter Q
+    R:Char = Char(82)                   # R   Latin Capital letter R
+    S:Char = Char(83)                   # S   Latin Capital letter S
+    T:Char = Char(84)                   # T   Latin Capital letter T
+    U:Char = Char(85)                   # U   Latin Capital letter U
+    V:Char = Char(86)                   # V   Latin Capital letter V
+    W:Char = Char(87)                   # W   Latin Capital letter W
+    X:Char = Char(88)                   # X   Latin Capital letter X
+    Y:Char = Char(89)                   # Y   Latin Capital letter Y
+    Z:Char = Char(90)                   # Z   Latin Capital letter Z
+    leftSquareBracket:Char = Char(91)   # [   Left Square Bracket
+    backslash:Char = Char(92)           # \   Backslash
+    rightSquareBracket:Char = Char(93)  # ]   Right Square Bracket
+    circumflexAccent:Char = Char(94)    # ^   Circumflex accent
+    lowLine:Char = Char(95)             # _   Low line
+    graveAccent:Char = Char(96)         # `   Grave accent
+    a:Char = Char(97)                   # a   Latin Small Letter A
+    b:Char = Char(98)                   # b   Latin Small Letter B
+    c:Char = Char(99)                   # c   Latin Small Letter C
+    d:Char = Char(100)                  # d   Latin Small Letter D
+    e:Char = Char(101)                  # e   Latin Small Letter E
+    f:Char = Char(102)                  # f   Latin Small Letter F
+    g:Char = Char(103)                  # g   Latin Small Letter G
+    h:Char = Char(104)                  # h   Latin Small Letter H
+    i:Char = Char(105)                  # i   Latin Small Letter I
+    j:Char = Char(106)                  # j   Latin Small Letter J
+    k:Char = Char(107)                  # k   Latin Small Letter K
+    l:Char = Char(108)                  # l   Latin Small Letter L
+    m:Char = Char(109)                  # m   Latin Small Letter M
+    n:Char = Char(110)                  # n   Latin Small Letter N
+    o:Char = Char(111)                  # o   Latin Small Letter O
+    p:Char = Char(112)                  # p   Latin Small Letter P
+    q:Char = Char(113)                  # q   Latin Small Letter Q
+    r:Char = Char(114)                  # r   Latin Small Letter R
+    s:Char = Char(115)                  # s   Latin Small Letter S
+    t:Char = Char(116)                  # t   Latin Small Letter T
+    u:Char = Char(117)                  # u   Latin Small Letter U
+    v:Char = Char(118)                  # v   Latin Small Letter V
+    w:Char = Char(119)                  # w   Latin Small Letter W
+    x:Char = Char(120)                  # x   Latin Small Letter X
+    y:Char = Char(121)                  # y   Latin Small Letter Y
+    z:Char = Char(122)                  # z   Latin Small Letter Z
+    leftCurlyBracket:Char = Char(123)   # {   Left Curly Bracket
+    verticalBar:Char = Char(124)        # |   Vertical bar
+    rightCurlyBracket:Char = Char(125)  # }   Right Curly Bracket
+    tilde:Char = Char(126)              # ~   Tilde
+
+    #[[ Convert a Char to a Num if it is a digit character
+    #
+    #   If this is not a digit, return Num.NaN
+    #]]
+    toDigit(this:Char):Num
+    {
+        digit = this.u.sub(48)
+        return = if(digit.lt(10).and(digit.geq(0)), digit, Num.NaN)
+    }
+
+    eq(this:Char, other:Char):Bool
+    {
+        return = this.u.eq(other.u)
+    }
+}

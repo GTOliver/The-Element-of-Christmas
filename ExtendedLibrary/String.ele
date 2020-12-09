@@ -1,0 +1,12 @@
+struct String(chars:List)
+{
+    at(this:String, idx:Num):Char = this.chars.at(idx)
+
+    eq(this:String, other:String):Bool
+    {
+        sameLength = this.chars.count.eq(other.chars.count)
+        charwiseEqual = List.zip(this.chars, other.chars, _(a:Char, b:Char):Bool = a.eq(b))
+        allEqual = charwiseEqual.fold(true, _(a:Bool, b:Bool):Bool = a.and(b))
+        return = sameLength.and(allEqual)
+    }
+}

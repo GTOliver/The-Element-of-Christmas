@@ -1,0 +1,52 @@
+namespace DayEight
+{
+    run:Num
+    {
+        return = calculate(DayEightInput.data)
+    }
+
+    calculate(instructions:List):Num
+    {
+        struct State(position:Num, accumulator:Num)
+        {
+            acc(this:State, arg:Num):State = State(this.position.add(1), this.accumulator.add(arg))
+            jmp(this:State, arg:Num):State = State(this.position.add(arg), this.accumulator)
+            nop(this:State, arg:Num):State = State(this.position.add(1), this.accumulator)
+        }
+
+        initialProgramState = State(0, 0)
+
+        accStr = String(list(Char.a, Char.c, Char.c))
+        jmpStr = String(list(Char.j, Char.m, Char.p))
+        nopStr = String(list(Char.n, Char.o, Char.p))
+
+        instDict = Dict.empty.add(accStr, State.acc).add(jmpStr, State.jmp).add(nopStr, State.nop)
+        calledBefore = List.repeat(false, instructions.count)
+
+
+        iterationState = {pState = initialProgramState, calls = calledBefore, debug = 0}
+
+        continueCondition(nextIterationState):Bool
+        {
+            nextPosition = nextIterationState.pState.position
+            nextAlreadyCalled = nextIterationState.calls.at(nextPosition)
+            return = not(nextAlreadyCalled)
+        }
+
+        iterationBody(currentIterationState)
+        {
+            currentProgState = currentIterationState.pState
+            currentInstruction = instructions.at(currentProgState.position)
+            currentOperation = instDict.get(currentInstruction.operation)
+            currentArg = currentInstruction.argument
+
+            nextProgState = currentOperation(currentProgState, currentArg)
+
+            currentCallList = currentIterationState.calls
+            nextCallList = List(_(idx:Num) = if(idx.eq(currentProgState.position), true, currentCallList.at(idx)), currentCallList.count)
+            return = {pState = nextProgState, calls = nextCallList, debug = currentIterationState.debug.add(1)}
+        }
+
+        return = for(iterationState, continueCondition, iterationBody).pState.accumulator
+    }
+}
